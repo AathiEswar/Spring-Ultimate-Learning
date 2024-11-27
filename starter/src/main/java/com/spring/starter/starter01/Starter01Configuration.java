@@ -15,9 +15,17 @@ public class Starter01Configuration {
     public int age(){
         return 21;
     }
-    @Bean
+    @Bean(name = "personRecord")
     public Person person(){
-        return new Person("Xioa" , 2000);
+        return new Person("Xioa" , 2000 , new Address("Kolkata" , "India"));
+    }
+    @Bean
+    public Person personParameters(String name, int age, Address address1){
+        return new Person(name , age , address1);
+    }
+    @Bean
+    public Person personMethodCall(){
+        return new Person(name() , age() , address());
     }
     @Bean(name = "address1")
     public Address address(){

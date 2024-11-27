@@ -32,11 +32,12 @@ public class SpringStarter01 {
         // using its name
         System.out.println(context.getBean("name"));
         System.out.println(context.getBean("age"));
-        System.out.println(context.getBean("person"));
+        System.out.println(context.getBean("personRecord"));
+        System.out.println(context.getBean("personMethodCall"));
+        System.out.println(context.getBean("personParameters"));
         System.out.println(context.getBean("address1"));
 
         // using its type
-        System.out.println(context.getBean(Person.class));
         System.out.println(context.getBean(Address.class));
     }
 }
