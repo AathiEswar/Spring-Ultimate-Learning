@@ -5,8 +5,6 @@ import com.spring.starter.game.GameRunner;
 import com.spring.starter.game.PacmanGame;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-
 @Configuration
 public class AppRunnerSpringConfig {
 
