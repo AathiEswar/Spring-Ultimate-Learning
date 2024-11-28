@@ -13,7 +13,6 @@ class BusinessClassConstructor {
     Dependency1Constructor dependency1;
     Dependency2Constructor dependency2;
 
-    @Autowired
     public BusinessClassConstructor(Dependency1Constructor dependency1, Dependency2Constructor dependency2) {
         this.dependency1 = dependency1;
         this.dependency2 = dependency2;
