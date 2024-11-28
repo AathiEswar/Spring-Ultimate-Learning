@@ -1,4 +1,4 @@
-package com.spring.intermediate.game;
+package com.spring.dependencyInjection.game;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
