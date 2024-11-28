@@ -30,22 +30,22 @@ public class SpringStarter01 {
         // 1 : Start a Spring Context
         // Ioc Container for Spring
         // helps for scanning and registering the beans (accepts @Configuration and @Component )
-        var context = new AnnotationConfigApplicationContext(Starter01Configuration.class);
-        // 2 : Configure Spring @Configuration
+        try(var context = new AnnotationConfigApplicationContext(Starter01Configuration.class)){
+            // 2 : Configure Spring @Configuration
+            // ACCESS a bean
+            // using its name
+            System.out.println(context.getBean("name"));
+            System.out.println(context.getBean("age"));
+            System.out.println(context.getBean("personRecord"));
+            System.out.println(context.getBean("personMethodCall"));
+            System.out.println(context.getBean("personParameters"));
+            System.out.println(context.getBean("address1"));
 
-        // ACCESS a bean
-        // using its name
-//        System.out.println(context.getBean("name"));
-//        System.out.println(context.getBean("age"));
-//        System.out.println(context.getBean("personRecord"));
-//        System.out.println(context.getBean("personMethodCall"));
-        System.out.println(context.getBean("personParameters"));
-//        System.out.println(context.getBean("address1"));
+            // using its type
+            System.out.println(context.getBean(Address.class));
+            System.out.println(context.getBean(Person.class));
 
-        // using its type
-//        System.out.println(context.getBean(Address.class));
-//        System.out.println(context.getBean(Person.class));
-
-        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+            Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+        }
     }
 }

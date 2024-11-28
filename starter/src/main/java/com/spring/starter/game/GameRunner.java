@@ -2,8 +2,8 @@ package com.spring.starter.game;
 
 public class GameRunner {
     GameConsole game ;
-    public GameRunner(GameConsole marioGame) {
-        this.game = marioGame;
+    public GameRunner(GameConsole game) {
+        this.game = game;
     }
 
     public void run() {
