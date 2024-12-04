@@ -10,7 +10,11 @@ public class Controller {
 
     @GetMapping(value = "/courses")
     public List<Course> getCourses(){
-        return Arrays.asList(new Course(21 , "java" , "Aathi"));
+        return Arrays.asList(
+                new Course(21 , "java" , "Aathi"),
+                new Course(21, "ThreeJs" , "Aathi"),
+                new Course(23, "React Three Fibre" , "Aathi"),
+                new Course(22, "ThreeJs" , "Aathi"));
     }
 
 }
