@@ -1,0 +1,6 @@
+insert into course ( id , author , name )
+values ( 1 , 'Aathi Eswar' , 'Spring Boot' )
+
+Select * from course
+
+delete from course where id = 1
