@@ -1,8 +1,9 @@
+<%@ page isELIgnored="false" %>
 <html>
     <head>
         <title> THis is from JSP</title>
     </head>
     <body>
-        Body Frm JSP
+        Hellooo ${name} !
     </body>
 </html>
