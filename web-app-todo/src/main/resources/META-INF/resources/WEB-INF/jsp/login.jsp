@@ -4,6 +4,10 @@
         <title> THis is from JSP</title>
     </head>
     <body>
-        Hellooo ${name} !
+      <form method="post">
+        Name : <input type="text" name="name" />
+        Password : <input type="password" name="password" />
+        <button type="submit" > Submit </button>
+      </form>
     </body>
 </html>
