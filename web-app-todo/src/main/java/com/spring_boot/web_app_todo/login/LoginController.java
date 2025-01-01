@@ -1,5 +1,6 @@
 package com.spring_boot.web_app_todo.login;
 
+import com.spring_boot.web_app_todo.auth.AuthenticationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,18 +26,29 @@ public class LoginController {
 //        return "login";
 //    }
 
+    private AuthenticationService authService;
+
+    public LoginController(AuthenticationService authService) {
+        this.authService = authService;
+    }
+
     @GetMapping("login")
     public String login() {
         return "login";
     }
 
     @PostMapping("login")
-    public String loginToWelcome(@RequestParam(name = "name") String name ,
-                                 @RequestParam String password ,
+    public String loginToWelcome(@RequestParam(name = "name") String name,
+                                 @RequestParam String password,
                                  ModelMap modelMap
-                                 ){
-        modelMap.put("name" , name);
-        modelMap.put("password" , password);
-        return "welcome";
+    ) {
+
+        if (authService.authenticationService(name, password)) {
+
+            modelMap.put("name", name);
+            return "welcome";
+        }
+        modelMap.put("error" , "Invalid Credentials");
+        return "login";
     }
 }

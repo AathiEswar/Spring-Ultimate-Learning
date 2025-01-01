@@ -5,6 +5,9 @@
     </head>
     <body>
       <form method="post">
+
+        FORM SUBMIT
+        <pre> ${error} </pre>
         Name : <input type="text" name="name" />
         Password : <input type="password" name="password" />
         <button type="submit" > Submit </button>
