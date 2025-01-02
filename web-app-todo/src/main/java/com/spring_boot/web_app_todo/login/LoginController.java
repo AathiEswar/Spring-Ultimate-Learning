@@ -6,9 +6,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 // to mention it s a web controller
 @Controller
+// used for adding attributes to session handling to persist the value across multiple request
+@SessionAttributes("name")
 public class LoginController {
 
     //    private Logger logger = LoggerFactory.getLogger(getClass());
