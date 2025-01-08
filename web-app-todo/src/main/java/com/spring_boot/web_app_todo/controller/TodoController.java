@@ -20,4 +20,9 @@ public class TodoController {
         modelMap.put("todos" , todoService.findByUserName("SomeRandom"));
         return "listTodo";
     }
+
+    @GetMapping("add-todo")
+    public String addTodo(){
+        return "addTodo";
+    }
 }
