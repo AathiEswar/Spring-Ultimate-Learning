@@ -51,8 +51,8 @@ public class TodoController {
         todoService.addTodoToList(
                 (String) (modelMap.get("name")),
                 todo.getDescription(),
-                LocalDate.now().plusYears(1),
-                false
+                todo.getLocalDate(),
+                todo.isDone()
         );
 
         return "redirect:/list-todo";
