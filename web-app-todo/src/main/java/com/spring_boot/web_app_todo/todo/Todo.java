@@ -1,11 +1,17 @@
 package com.spring_boot.web_app_todo.todo;
 
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class Todo {
     private int id;
     private String userName ;
+
+    @Size(min = 10 , message = "Enter atleast 10 Characters")
     private String description ;
+
     private LocalDate localDate;
     private boolean done;
 
