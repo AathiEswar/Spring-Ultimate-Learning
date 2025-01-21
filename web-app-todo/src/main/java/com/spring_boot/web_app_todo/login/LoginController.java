@@ -42,7 +42,7 @@ public class LoginController {
 
     @PostMapping("login")
     public String loginToWelcome(@RequestParam(name = "name") String name,
-                                 @RequestParam String password,
+                                 @RequestParam(name = "password") String password,
                                  ModelMap modelMap
     ) {
 

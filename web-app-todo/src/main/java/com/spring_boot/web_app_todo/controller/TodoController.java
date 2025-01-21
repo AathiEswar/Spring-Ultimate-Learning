@@ -23,7 +23,7 @@ public class TodoController {
 
     @GetMapping("list-todo")
     public String listTodo(ModelMap modelMap) {
-        modelMap.put("todos", todoService.findByUserName("SomeRandom"));
+        modelMap.put("todos", todoService.findAllTodo());
         return "listTodo";
     }
 
@@ -61,6 +61,27 @@ public class TodoController {
     @GetMapping("delete-todo")
     public String deleteTodo(@RequestParam(name = "id") long id ){
         todoService.deleteTodo(id);
+        return "redirect:/list-todo";
+    }
+
+    @GetMapping("update-todo")
+    public String showUpdateTodo(@RequestParam(name = "id") long id , ModelMap modelMap ){
+        Todo todo = todoService.getTodoById(id);
+        modelMap.put("todo" , todo);
+        return "addTodo";
+    }
+
+    @PostMapping("update-todo")
+    // Binding Result -> gets the data about error messages
+    public String updateTodo(ModelMap modelMap, @Valid Todo todo , BindingResult result) {
+
+        if(result.hasErrors()){
+            return "todo";
+        }
+
+        todo.setUserName((String) modelMap.get("userName"));
+        todoService.updateTodo(todo);
+
         return "redirect:/list-todo";
     }
 }
