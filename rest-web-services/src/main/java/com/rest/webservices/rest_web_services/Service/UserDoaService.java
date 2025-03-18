@@ -43,11 +43,14 @@ public class UserDoaService {
             throw new NoSuchElementException("User list is empty or uninitialized");
         }
 
+        // predicate is a functional interface which helps to write condition that returns boolean
         Predicate<? super User> predicate = user -> user.getId() == id;
 
-        return users.stream()
-                .filter(predicate)
-                .findFirst().orElseThrow(
+        return users
+                .stream() // to stream for easier manipulation
+                .filter(predicate) // filter with predicate
+                .findFirst() // find the first of the filtered
+                .orElseThrow(
                         () -> new UserNotFoundException("User Not Found")
                 );
     }
@@ -59,12 +62,6 @@ public class UserDoaService {
             users = new ArrayList<User>();
         }
 
-//        // when the name is empty throw error
-//        if (user.getName().trim().isEmpty()) {
-//            throw new IllegalAccessException("Name not valid");
-//        }
-//
-        // or else
         user.setId(++latestId);
         users.add(user);
 

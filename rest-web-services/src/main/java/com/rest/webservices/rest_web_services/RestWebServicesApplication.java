@@ -4,6 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // REST web servicesg
+/*
+* OTHER CONCEPTS :
+* 	Swagger Code Documentation with dependency
+* 	Internationalization
+* 	API Versioning using path urls ( url , parameter , header , media type )
+* */
 
 @SpringBootApplication
 public class RestWebServicesApplication {
