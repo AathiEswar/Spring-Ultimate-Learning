@@ -2,13 +2,13 @@ package com.rest.webservices.rest_web_services.Entity;
 
 import java.time.LocalDate;
 
-// A POJO as Entity with User details
-public class Users {
+// A POJO as Entity with User details with constructor , getter , setter and toString methods
+public class User {
     private String name;
     private long id;
     private LocalDate birthDate;
 
-    public Users(long id, String name , LocalDate birthDate) {
+    public User(long id, String name , LocalDate birthDate) {
         this.name = name;
         this.id = id;
         this.birthDate = birthDate;
@@ -40,7 +40,7 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", birthDate=" + birthDate +
